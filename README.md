@@ -7,6 +7,7 @@ I feel like the building positions will be assigned by a base tile that is assig
 
 Rerences that may help me along the way of this project:
 FRACTALS:
+
 https://www.youtube.com/watch?v=WFtTdf3I6Ug&t=193s
 
 https://www.youtube.com/watch?v=0jwkZKDOzfc
@@ -14,6 +15,7 @@ https://www.youtube.com/watch?v=0jwkZKDOzfc
 https://www.youtube.com/watch?v=fkRnUoXacHM
 
 PERLIN NOISE:
+
 https://www.youtube.com/watch?v=bG0uEXV6aHQ
 
 https://www.youtube.com/watch?v=sUDPfC1nH_E&t=176s
