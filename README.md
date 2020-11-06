@@ -1,3 +1,11 @@
+# Name
+
+Sean Lynch
+
+# Student Number
+
+C18357081
+
 # Procedural-Generation
 This repository will contain the source files and code on my journey of trying to create a 3D procedurally generated city.
 
