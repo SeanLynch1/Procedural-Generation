@@ -6,6 +6,10 @@ Sean Lynch
 
 C18357081
 
+# Class Group
+
+DT508
+
 # Procedural-Generation
 This repository will contain the source files and code on my journey of trying to create a 3D procedurally generated city.
 
