@@ -13,7 +13,9 @@ I plan to procedurally generate buildings in a city using recursion that would l
 
 I feel like the building positions will be assigned by a base tile that is assigned manually within a for loop or randomly using a different method that decides wether to place a tile or a nullable object in each sections of a grid. The recursion layers can be generated using for loops with randomised maximum iteration amounts. They could possibly randomly select different prefabs from an array. For the fractals I could try right a rule set that tells prefabs to instantiate corresponding prefabs on their sides/edges. I could randomly set the offset of a perlin noise texture for random height generation of terain/ rooftops that players can adjust with a slider or something along those lines as well.
 
-Rerences that may help me along the way of this project:
+# References
+
+These references may help me along the way of this project:
 FRACTALS:
 
 https://www.youtube.com/watch?v=WFtTdf3I6Ug&t=193s
