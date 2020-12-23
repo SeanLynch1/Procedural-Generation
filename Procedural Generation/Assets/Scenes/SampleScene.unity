@@ -173,7 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62ed148c701d6f43b6e115ba3f83938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingGenerator: {fileID: 0}
+  buildingGenerator: {fileID: 6027554913916897078, guid: 2dd4042c41082ec45896ad26330f1e81,
+    type: 3}
   instantiateTowers: {fileID: 0}
   minSliderValue: 0
 --- !u!114 &56691141
@@ -1268,6 +1269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2093043904}
   - component: {fileID: 2093043905}
+  - component: {fileID: 2093043906}
   m_Layer: 0
   m_Name: Instantiate Roads
   m_TagString: Untagged
@@ -1302,5 +1304,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd3d83cc4b75744690bea72f966e77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roadTile: {fileID: 9004158808932589458, guid: f3face694e3872f459f84a442ee16eaa,
+  roadTile: {fileID: 5196232332519942778, guid: 8547441d188403c408745a62f1c4dc90,
     type: 3}
+  roadTiles: []
+  maxRoads: 400
+--- !u!65 &2093043906
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093043903}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
