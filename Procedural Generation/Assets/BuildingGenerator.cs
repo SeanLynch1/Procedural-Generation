@@ -45,14 +45,29 @@ public class BuildingGenerator : MonoBehaviour
         float increasableValue = 0;
         for (int i = 0; i < buildingHeight; i++)
         {
-            if (i != 0)
+            GameObject buildingBlock;
+
+            if (i != 0 && i != buildingHeight-1)
                 increasableValue += blockSpacing * buildingBlockPrefabs.Count;
             for (int j = 0; j < buildingBlockPrefabs.Count; j++)
             {
-                 buildingBlockPosition = new Vector3(this.transform.position.x, j * blockSpacing + increasableValue, this.transform.position.z);
-                GameObject buildingBlock = Instantiate(buildingBlockPrefabs[Random.Range(0, buildingBlockPrefabs.Count)], buildingBlockPosition, Quaternion.identity);
-                buildingBlock.GetComponent<MeshRenderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f); // HSV = shade and intensity values
-                instantiatedBlocks.Add(buildingBlock);
+                buildingBlockPosition = new Vector3(this.transform.position.x, j * blockSpacing + increasableValue, this.transform.position.z);
+                if (i != buildingHeight - 1 && j != buildingBlockPrefabs.Count)
+                {
+                    buildingBlock = Instantiate(buildingBlockPrefabs[Random.Range(0, buildingBlockPrefabs.Count - 1)], buildingBlockPosition, Quaternion.identity);
+                    buildingBlock.GetComponent<MeshRenderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f); // HSV = shade and intensity values
+                    buildingBlock.transform.parent = this.gameObject.transform;
+                    instantiatedBlocks.Add(buildingBlock);
+                }
+                else if( buildingHeight > 1 && j == buildingBlockPrefabs.Count - 1)
+                {
+                    Debug.Log("Top Block Instantiated");
+                    buildingBlock = Instantiate(buildingBlockPrefabs[buildingBlockPrefabs.Count - 1], new Vector3(buildingBlockPosition.x,buildingBlockPosition.y + blockSpacing, buildingBlockPosition.z), Quaternion.identity);
+                    buildingBlock.transform.parent = this.gameObject.transform;
+                    instantiatedBlocks.Add(buildingBlock);
+                    j = buildingBlockPrefabs.Count;
+                }
+
             }
         }
     }
@@ -68,7 +83,7 @@ public class BuildingGenerator : MonoBehaviour
                
                 for (int j = 0; j < buildingBlockPrefabs.Count; j++)
                 {
-                         buildingBlockPosition2 = new Vector3(this.transform.position.x,(j * blockSpacing + increasableValue) - (blockSpacing * j) - blockSpacing , this.transform.position.z);
+                         buildingBlockPosition2 = new Vector3(this.transform.position.x, j * (blockSpacing) + (increasableValue - (blockSpacing * buildingBlockPrefabs.Count)) + blockSpacing * 3, this.transform.position.z);
                     g.transform.position = buildingBlockPosition2;
                 }
             }

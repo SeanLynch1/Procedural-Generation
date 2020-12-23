@@ -15,10 +15,10 @@ GameObject:
   - component: {fileID: 4680170498358063846}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: PrimaryBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3548067777345124457
 Transform:
@@ -107,6 +107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayDistance: 5
+  maxListLimit: 32
   buildingBlocks:
-  - {fileID: 3831035249263041299, guid: f2e88136602cbb84d8bcd852e9653bea, type: 3}
-  - {fileID: 5456045690268891664, guid: 9897ec082f1c2ef45bb9e7424a519539, type: 3}
+  - {fileID: 2787805286028557446, guid: 4ba9d924ae713f64ebf55995cf2a31b4, type: 3}
+  - {fileID: 3831035249263041299, guid: 2fdcdadadbe8cf546996eded92c5ab90, type: 3}
+  - {fileID: 5456045690268891664, guid: 65e9b85b2fa76f347b10830fd75aa08a, type: 3}
+  trackOfBlocks: []

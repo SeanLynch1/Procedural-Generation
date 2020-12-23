@@ -1142,7 +1142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009ae0fd2f1d7a94cab994e5ab8f4cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingLoops: 4
+  buildingLoops: 1
+  radius: 30
+  maxSpaceBetweenLayer: 80
   tilePrefab: {fileID: 6027554913916897077, guid: 2dd4042c41082ec45896ad26330f1e81,
     type: 3}
   tileList: []

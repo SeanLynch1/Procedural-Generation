@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class InstantiateTowers : MonoBehaviour
 {
+    [Header ("Modifiers")]
     public int buildingLoops = 15;
+    public int radius;
+    public int maxSpaceBetweenLayer;
+    [Header ("Components")]
     public GameObject tilePrefab;
     public List<GameObject> tileList = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
-        CreateBuildings(buildingLoops, 45, new Vector3(0f, 0f, 0f), 41);
+        CreateBuildings(buildingLoops, 45, new Vector3(0f, 0f, 0f), radius);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void CreateBuildings(int num, int num2, Vector3 point, int radius)
     {
         for (int i = 0; i < num; i++)
         {
-            radius += Random.Range(5, 25);
+            radius += Random.Range(15, maxSpaceBetweenLayer);
             num2 += 1;
             for (int j = 0; j < num2; j++)
             {

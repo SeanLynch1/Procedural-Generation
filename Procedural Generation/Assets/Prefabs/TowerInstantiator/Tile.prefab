@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6027554913916897078}
   m_Layer: 0
   m_Name: Tile
-  m_TagString: Untagged
+  m_TagString: PrimaryBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,6 +51,7 @@ MonoBehaviour:
   - {fileID: 2787805286028557446, guid: dcc78e5532f939e4e8e51f90646e1956, type: 3}
   - {fileID: 3831035249263041299, guid: f2e88136602cbb84d8bcd852e9653bea, type: 3}
   - {fileID: 5456045690268891664, guid: 9897ec082f1c2ef45bb9e7424a519539, type: 3}
+  - {fileID: 3342303198883269660, guid: 583e9a8c6dca752479ae398eba186487, type: 3}
   buildingBlockPosition: {x: 0, y: 0, z: 0}
   buildingBlockPosition2: {x: 0, y: 0, z: 0}
 --- !u!1 &6027554914185465189

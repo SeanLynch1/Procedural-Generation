@@ -21,11 +21,6 @@ public class SliderControl : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void ChangeBlockSpacing()
     {
         foreach (GameObject g in instantiateTowers.tileList)
