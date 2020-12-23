@@ -5,20 +5,20 @@ using UnityEngine.UI;
 
 public class SliderControl : MonoBehaviour
 {
-    InstantiateTowers instantiateTowers;
+    public BuildingGenerator buildingGenerator;
+    public InstantiateTowers instantiateTowers;
     private Slider slider;
-    private float minSliderValue;
+    public float minSliderValue;
     // Start is called before the first frame update
     void Start()
     {
+        buildingGenerator = FindObjectOfType<BuildingGenerator>();
         instantiateTowers = FindObjectOfType<InstantiateTowers>();
         slider = gameObject.GetComponent<Slider>();
 
-        foreach (GameObject g in instantiateTowers.tileList)
-        {
-            minSliderValue = g.GetComponent<BuildingGenerator>().blockSpacing;
+        
+            minSliderValue = buildingGenerator.blockSpacing;
             slider.minValue = minSliderValue;
-        }
     }
 
     public void ChangeBlockSpacing()
