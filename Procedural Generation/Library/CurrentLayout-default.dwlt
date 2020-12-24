@@ -402,9 +402,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -181.0936, y: 10.160408, z: 12.774936}
+    m_Target: {x: 0.6677834, y: 85.1293, z: -7.390668}
     speed: 2
-    m_Value: {x: -181.0936, y: 10.160408, z: 12.774936}
+    m_Value: {x: 0.6677839, y: 85.1293, z: -7.390675}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -450,9 +450,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.24498878, y: 0.6237785, z: -0.2151315, w: -0.710353}
+    m_Target: {x: -0.056345373, y: 0.72959, z: -0.06055571, w: -0.6788657}
     speed: 2
-    m_Value: {x: -0.24392271, y: 0.62409985, z: -0.21419537, w: -0.7107189}
+    m_Value: {x: -0.05532696, y: 0.7296793, z: -0.059461202, w: -0.67894876}
   m_Size:
     m_Target: 71.51976
     speed: 2
@@ -639,19 +639,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/BuildingBlocks/SecondaryBuildingBlocks
+    - Assets/Materials
   m_ViewMode: 1
   m_StartGridSize: 50
   m_LastFolders:
-  - Assets/Prefabs/BuildingBlocks/SecondaryBuildingBlocks
+  - Assets/Materials
   m_LastFoldersGridSize: 50
   m_LastProjectPath: D:\Github\Procedural-Generation\Procedural Generation
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 12360000
-    m_LastClickedID: 13842
+    m_SelectedIDs: 10360000
+    m_LastClickedID: 13840
     m_ExpandedIDs: 000000000236000004360000063600000836000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -708,7 +708,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 6441000084caffff3a3b0000863c00005653050000000000d2340000
+    m_ExpandedInstanceIDs: 6441000084caffff3a3b0000863c000056530500d234000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
