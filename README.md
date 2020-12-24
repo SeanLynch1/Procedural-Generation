@@ -42,9 +42,12 @@ This is how the vertices for each corner of each triangle are allocated:
             vert++;
         }
 The xSize is the width of the vertices grid and the zSize is the height.
-This code was implemented by following Brackey's procedural terrain video referenced in the references section below.
+This section of code was implemented by following Brackey's procedural terrain video referenced in the references section below.
 
 Multiple tiles can be formed in multiple loops in the shape of a circle using the formula for the circuference of a circle along with sin and cos functions to calculate the individual placement for each tile in each circle loop that is created. Each tile then generates a random height and instantiates a randomised block starting at 0 and recursively repeating reaching the max height. A roof top piece is then instantiated at the max height of the tower.
+
+The information for the for loop was referenced from some of the code created on the Game Engines course and modified by me.
+This is how the the towers are created in a for loop:
 ```
   for (int i = 0; i < num; i++)
         {
@@ -74,6 +77,27 @@ Multiple tiles can be formed in multiple loops in the shape of a circle using th
             }
         }
 ```
+This is how the recursion layers of the towers are generated:
+`
+    public void BuildTower()
+    {
+        float increasableValue = 0;
+        for (int i = 0; i < buildingHeight; i++)
+        {
+            if (i != 0)
+                increasableValue += blockSpacing * buildingBlockPrefabs.Count;
+            for (int j = 0; j < buildingBlockPrefabs.Count; j++)
+            {
+                buildingBlockPosition = new Vector3(this.transform.position.x, j * blockSpacing + increasableValue, this.transform.position.z);
+                GameObject buildingBlock = Instantiate(buildingBlockPrefabs[Random.Range(0, buildingBlockPrefabs.Count - 1)], buildingBlockPosition, Quaternion.identity);
+                buildingBlock.GetComponent<MeshRenderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f); // HSV = shade and intensity values
+                buildingBlock.transform.parent = this.gameObject.transform;
+                instantiatedBlocks.Add(buildingBlock);
+            }
+        }
+    }
+    `
+    The cube blocks in each tower shoots out a ray in a random direction, selecting from a range of forward, back, left, and, right. If the ray does not collide with a primary tower block it will instantiate a new random block to the side of it at the end point of the casted ray. This newly instantiated block will repeat this process several times forming an overhanging structure to the side of the tower.
 # Initial Proposal
 This repository will contain the source files and code on my journey of trying to create a 3D procedurally generated city.
 
@@ -98,6 +122,8 @@ PERLIN NOISE:
 https://www.youtube.com/watch?v=bG0uEXV6aHQ
 
 https://www.youtube.com/watch?v=sUDPfC1nH_E&t=176s
+
+BRACKEY'S :
 
 https://www.youtube.com/watch?v=64NblGkAabk
 
