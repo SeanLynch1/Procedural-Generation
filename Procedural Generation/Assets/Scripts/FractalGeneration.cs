@@ -16,7 +16,7 @@ public class FractalGeneration : MonoBehaviour
     {
         randomNumber = Random.Range(1, 5);
         buildingGenerator = GetComponentInParent<BuildingGenerator>();
-        for(int i = 12; i < buildingGenerator.instantiatedBlocks.Count; i ++)
+        for(int i = 10; i < buildingGenerator.instantiatedBlocks.Count; i ++)
         {
             if (this.gameObject == buildingGenerator.instantiatedBlocks[i])
                 InstantiateFractal();
