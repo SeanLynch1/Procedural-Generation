@@ -18,7 +18,7 @@ public class BuildingGenerator : MonoBehaviour
 
     [Header("Lists")]
     public List<GameObject> buildingBlockPrefabs;
-    private List<GameObject> instantiatedBlocks = new List<GameObject>();
+    [HideInInspector] public List<GameObject> instantiatedBlocks = new List<GameObject>();
     #endregion
     void Start()
     {

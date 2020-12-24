@@ -1307,7 +1307,7 @@ MonoBehaviour:
   roadTile: {fileID: 5196232332519942778, guid: 8547441d188403c408745a62f1c4dc90,
     type: 3}
   roadTiles: []
-  maxRoads: 400
+  maxRoads: 800
 --- !u!65 &2093043906
 BoxCollider:
   m_ObjectHideFlags: 0

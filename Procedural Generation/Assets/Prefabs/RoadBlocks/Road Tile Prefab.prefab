@@ -222,4 +222,6 @@ MonoBehaviour:
     type: 3}
   emptyPrefab: {fileID: 7586782364665834993, guid: bdca17e636c6aac439a8324eae531783,
     type: 3}
+  towerPrefab: {fileID: 6027554913916897077, guid: 6b9a6f345722a20489cae385ad0ec255,
+    type: 3}
   randomDirection: {x: 0, y: 0, z: 0}

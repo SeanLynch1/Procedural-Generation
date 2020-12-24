@@ -8,35 +8,8 @@ public class RoadPathway : MonoBehaviour
     public GameObject roadPrefab;
     public GameObject cornerRoadPrefab;
     public GameObject emptyPrefab;
+    public GameObject towerPrefab;
     private float rayDistance = 5;
-    public Vector3 randomDirection;
-    Vector3 RandomDirection
-    {
-        get
-        {
-            for(int i = 0; i < 4; i ++)
-            {
-                int n = i;
-                switch (n)
-                {
-                    case 0:
-                        randomDirection = Vector3.right;
-                        break;
-                    case 1:
-                                randomDirection = -Vector3.right;
-                        break;
-                    case 2:
-                                randomDirection = Vector3.forward;
-                        break;
-                    case 3:
-                                randomDirection = -Vector3.forward;
-                        break;
-                }
-            }
-            return randomDirection;
-        }
-
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -83,53 +56,74 @@ public class RoadPathway : MonoBehaviour
         {
             this.gameObject.SetActive(true);
         }
+        int number = 0;
+        if(CheckSides(number))
+        {
+            Debug.Log("number = " + number);
+            this.gameObject.SetActive(false);
+            Instantiate(towerPrefab, this.transform.position, Quaternion.identity);
+        }
     }
-    public void GenerateDirection()
-    {
-        GameObject newRoad = Instantiate(roadPrefab, this.transform.position + RandomDirection * 5, Quaternion.identity);
-        newRoad.transform.parent = this.transform;
-        instantiateRoads.roadTiles.Add(newRoad);
-    }
+
     public void ShootRays()
     {
         RaycastHit hit;
-        int randomNumber = Random.Range(0, 4);
-        int degrees = 0;
+        int randomNumber = Random.Range(0, 10);
 
-        for (int i = 0; i < 8; i++)
+        for (int j = 0; j < 4; j++)
         {
-            for(int j =0; j < 8; j ++)
+            int degrees = 0;
+            int n = Random.Range(0, 7);
+            switch (n)
             {
-                int n = Random.Range(0, 4);
-                switch (n)
-                {
-                    case 0:
-                        degrees += 90;
-                        break;
-                    case 1:
-                        degrees += 180;
-                        break;
-                    case 2:
-                        degrees += 270;
-                        break;
-                    case 3:
-                        degrees += 360;
-                        break;
-                }
-
-                this.transform.rotation = Quaternion.Euler(this.transform.rotation.x, this.transform.rotation.y + degrees, this.transform.rotation.z);
-                if (!Physics.Raycast(this.transform.position, transform.forward * rayDistance, out hit, rayDistance))
-                {
-                   
-                    GameObject spaceAvailabilityDetector = Instantiate(roadPrefab, this.transform.position + transform.forward * rayDistance, Quaternion.identity);
-                    spaceAvailabilityDetector.transform.parent = this.gameObject.transform.parent;
-                    instantiateRoads.roadTiles.Add(spaceAvailabilityDetector);
-                    return;
-                }
+                case 0:
+                    degrees += 0;
+                    break;
+                case 1:
+                    degrees -= 90;
+                    break;
+                case 2:
+                    degrees += 90;
+                    break;
+                default:
+                    degrees += 0;
+                    break;
             }
+            Debug.Log("Degrees = " + degrees);
+
+            if (!Physics.Raycast(this.transform.position, transform.forward * rayDistance, out hit, rayDistance))
+            {
+                GameObject spaceAvailabilityDetector = Instantiate(roadPrefab, this.transform.position + transform.forward * rayDistance, this.transform.rotation);
+                spaceAvailabilityDetector.transform.parent = this.gameObject.transform.parent;
+                instantiateRoads.roadTiles.Add(spaceAvailabilityDetector);
+            }
+            this.transform.rotation = Quaternion.Euler(this.transform.rotation.x, this.transform.rotation.y + degrees, this.transform.rotation.z);
         }
     }
-  
+    private bool CheckSides(int n)
+    {
+        RaycastHit hit;
+        if (!Physics.Raycast(this.transform.position, transform.forward * rayDistance, out hit, rayDistance))
+        {
+            n += 1;
+        }
+        if (!Physics.Raycast(this.transform.position, -transform.forward * rayDistance, out hit, rayDistance))
+        {
+            n += 1;
+        }
+        if (!Physics.Raycast(this.transform.position, transform.right * rayDistance, out hit, rayDistance))
+        {
+            n += 1;
+        }
+        if (!Physics.Raycast(this.transform.position, -transform.right * rayDistance, out hit, rayDistance))
+        {
+            n += 1;
+        }
+        if (n == 4)
+            return true;
+        else
+            return false;
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag != "Road Block")

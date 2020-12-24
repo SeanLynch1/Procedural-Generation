@@ -27,24 +27,25 @@ public class InstantiateRoads : MonoBehaviour
                 case 0:
                     road = Instantiate(roadTile, this.transform.position + transform.TransformDirection(Vector3.right) * distance, Quaternion.identity);
                     road.transform.rotation = Quaternion.Euler(road.transform.rotation.x,road.transform.rotation.y + 90,road.transform.rotation.z);
-                    road.transform.parent = this.transform;
+                    road.transform.parent = this.gameObject.transform;
                     InstantiateRoad(road);
                     break;
                 case 1:
                     road = Instantiate(roadTile, this.transform.position + transform.TransformDirection(-Vector3.right) * distance, Quaternion.identity);
                     road.transform.rotation = Quaternion.Euler(road.transform.rotation.x, road.transform.rotation.y - 90, road.transform.rotation.z);
-                    road.transform.parent = this.transform;
+                    road.transform.parent = this.gameObject.transform;
                     InstantiateRoad(road);
                     break;
                 case 2:
                     road = Instantiate(roadTile, this.transform.position + transform.TransformDirection(Vector3.forward) * distance, Quaternion.identity);
                     road.transform.rotation = Quaternion.Euler(road.transform.rotation.x, road.transform.rotation.y, road.transform.rotation.z);
-                    road.transform.parent = this.transform;
+                    road.transform.parent = this.gameObject.transform;
                     InstantiateRoad(road);
                     break;
                 case 3:
                     road = Instantiate(roadTile, this.transform.position + transform.TransformDirection(-Vector3.forward) * distance, Quaternion.identity);
                     road.transform.rotation = Quaternion.Euler(road.transform.rotation.x, road.transform.rotation.y + 180, road.transform.rotation.z);
+                    road.transform.parent = this.gameObject.transform;
                     InstantiateRoad(road);
                     break;
             }
