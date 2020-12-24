@@ -12,7 +12,7 @@ C18357081
 DT508
 
 # Project Description
-This project contains a proceduarlly generated city, that can be modified by use of the implemented UI. It consists of tiles which generates blocks forming towers in the loop of a iterating circle and based on certain positions within a road network. There is a ship which the user can use to navigate around the city and closely look at all the different implementations and beautiful colours. The city towers, roads and tower modification options were created without any external references or help.
+This project contains a proceduarlly generated city, that can be modified by use of the implemented UI. It consists of tiles which generates blocks forming towers in the loop of a iterating circle and based on certain positions within a road network. There is a ship which the user can use to navigate around the city and closely look at all the different implementations and beautiful colours. The city towers, roads and tower modification options were created without any external references or help. I created the music running in the background using FL Studio.
 
 # Instructions
 In the game there is a canvas containing UI elements which guides the user on what they can do. Using different controls explained within canvas the player can yaw, pitch, roll, elevate and strafe their ship. If the user right click's the mouse they will freeze the ships position and activate a second canvas which allows them to modify the individual rotation of each block in the city towers, the spacing between each block in each tower, the activity of each block in each tower and the rotation of every tower at once.
@@ -191,7 +191,8 @@ Here is how the activity of each block in their correlated list is set, this fun
                     }
             }
     }
-
+# What I'm Most Proud Of
+I'm Most proud of the recursive blocks that procedurally spawn on diffent sides of the cube blocks in the towers and the road networking system that I created. Each system uses random direction to instantiate new blocks creating fascinating architecture.
 # Initial Proposal
 This repository will contain the source files and code on my journey of trying to create a 3D procedurally generated city.
 
@@ -226,4 +227,5 @@ SHIP CONTROLLER:
 https://www.youtube.com/watch?v=yu3RhF7fHd8
 
 # Youtube Link Of City
+
 https://www.youtube.com/watch?v=TGgaLBJcnlw
