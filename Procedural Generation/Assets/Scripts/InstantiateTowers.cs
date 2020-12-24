@@ -11,12 +11,17 @@ public class InstantiateTowers : MonoBehaviour
     [Header ("Components")]
     public GameObject tilePrefab;
     public List<GameObject> tileList = new List<GameObject>();
+
+    public static bool isRotating;
     // Start is called before the first frame update
     void Start()
     {
         CreateBuildings(buildingLoops, 45, new Vector3(0f, 0f, 0f), radius);
     }
-
+    private void FixedUpdate()
+    {
+        RotateCenter();
+    }
     public void CreateBuildings(int num, int num2, Vector3 point, int radius)
     {
         for (int i = 0; i < num; i++)
@@ -45,6 +50,24 @@ public class InstantiateTowers : MonoBehaviour
                 tile.transform.parent = this.gameObject.transform;
                 tileList.Add(tile);
             }
+        }
+    }
+    public void RotateCenter()
+    {
+        if(ButtonControl.rotateLeft)
+        {
+            this.gameObject.transform.RotateAround(this.transform.position, Vector3.up, 45 * Time.deltaTime);
+            isRotating = true;
+        }
+        if (ButtonControl.rotateRight)
+        {
+            this.gameObject.transform.RotateAround(this.transform.position, Vector3.up, -45 * Time.deltaTime);
+            isRotating = true;
+        }
+        else
+        {
+            this.gameObject.transform.RotateAround(this.transform.position, Vector3.up, 0);
+            isRotating = false;
         }
     }
 }

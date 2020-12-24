@@ -57,7 +57,7 @@ public class RoadPathway : MonoBehaviour
             this.gameObject.SetActive(true);
         }
         int number = 0;
-        if(CheckSides(number))
+        if(CheckSides(number) && !InstantiateTowers.isRotating)
         {
             Debug.Log("number = " + number);
             this.gameObject.SetActive(false);

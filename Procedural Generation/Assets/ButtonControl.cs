@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class ButtonControl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static bool rotateLeft;
+    public static bool rotateRight;
 
-    // Update is called once per frame
-    void Update()
+    public void RotateLeft()
     {
-        
+        rotateLeft = true;
+        rotateRight = false;
+    }
+    public void Stop()
+    {
+        rotateLeft = false;
+        rotateRight = false;
+    }
+    public void RotateRight()
+    {
+        rotateRight = true;
+        rotateLeft = false;
     }
 }
