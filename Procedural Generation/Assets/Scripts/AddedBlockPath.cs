@@ -64,10 +64,12 @@ public class AddedBlockPath : MonoBehaviour
     }
     public void OnCollisionEnter(Collision collision)
     {
-        fractalGeneration = gameObject.GetComponentInParent<FractalGeneration>();
-        Debug.Log("Destroy Me");
-        if (collision.gameObject.tag == "PrimaryBlock" && this.gameObject != fractalGeneration.trackOfBlocks[0].gameObject)
-            this.gameObject.SetActive(false);
+        if(!ToggleControl.rotateIndividually)
+        {
+            fractalGeneration = gameObject.GetComponentInParent<FractalGeneration>();
+            if (collision.gameObject.tag == "PrimaryBlock" && this.gameObject != fractalGeneration.trackOfBlocks[0].gameObject)
+                this.gameObject.SetActive(false);
+        }
     }
 
 }
