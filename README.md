@@ -1,4 +1,4 @@
-# Procedural-Generation
+# Procedurally-Generated-City
 # Name
 
 Sean Lynch
@@ -45,9 +45,9 @@ This is how the vertices for each corner of each triangle are allocated:
 The xSize is the width of the vertices grid and the zSize is the height.
 This section of code was implemented by following Brackey's procedural terrain video referenced in the references section below.
 
-Multiple tiles can be formed in multiple loops in the shape of a circle using the formula for the circuference of a circle along with sin and cos functions to calculate the individual placement for each tile in each circle loop that is created. Each tile then generates a random height and instantiates a randomised block starting at 0 and recursively repeating reaching the max height. A roof top piece is then instantiated at the max height of the tower.
+Multiple tiles can be formed in multiple loops in the shape of a circle using the formula for the circumference of a circle along with sin and cos functions to calculate the individual placement of each tile in each circle loop that is created. Each tile then generates a random height and instantiates a randomised block starting at 0 and recursively repeating in the upwards direction until it reaches it's max height. A roof top piece is then instantiated at the max height of the tower.
 
-The information for the for loop was referenced from some of the code created on the Game Engines course and modified by me.
+The information for the for loop was referenced from some of the code created at the start of the Game Engines course and was then modified by myself.
 This is how the the towers are created in a for loop:
 
     for (int i = 0; i < num; i++)
@@ -98,9 +98,9 @@ This is how the recursion layers of the towers are generated:
         }
     }
  
- The cube blocks in each tower shoots out a ray in a random direction, selecting from a range of forward, back, left, and, right. If the ray does not collide with a primary tower block it will instantiate a new random block to the side of it at the end point of the casted ray. This newly instantiated block will repeat this process several times forming an overhanging structure to the side of the tower.
+ The cube blocks in each tower shoots out a ray in a random direction, selecting from a range of forward, back, left, and, right. If the ray does not collide with a primary tower block it will instantiate a new random block at the end point of the casted ray. This newly instantiated block will repeat this process several times forming an overhanging structure to the side of the tower.
  
- The roadpathway is found as follows. On Start a beginning tile spawnns 4 road tiles to either side of it. Each time it instantiates that tile the tile adds 90 to it's rotation. Each of these tiles the shoots a ray forwards and instantiates a new road tile at the end end point of that ray. The newly Instantiated roads then rotate in a random direction a shoot another ray forward facing ray based on it's rotation. If the ray doesn't collide with another road prefab , a new road prefab gets instantiated. Each road prefab shoots out a ray to either side and corner of it. If all of those rays return true a tower prefab is instantiated at that position.
+ The roadpathway is found as follows. On Start a beginning tile spawns 4 road tiles to either side of it. Each time it instantiates this tile, the next tile adds 90 to it's rotation. Each of these tiles then shoots a ray forwards and instantiates a new road tile at the end end point of that ray. The newly Instantiated roads then rotate in a random direction and a shoot another ray forwards from it's current rotation. If the ray doesn't collide with another road prefab , a new road prefab gets instantiated. Each road prefab shoots out a ray to either side and corner of it. If all of those rays return true a tower prefab is instantiated at that position.
  
  This is how the road system works:
  
@@ -143,7 +143,7 @@ This is how the recursion layers of the towers are generated:
     
     
     
-The individual Rotation of each block, the spacing between each block, the activity of each block and the rotation of all the towers of once are all controlled by buttons. Each block individual rotates around a random axis basde on a toggle in the HUD, when the toggle is set to false it's rotation is reset to it's original rotation. The spacing is denoted by assigning the spacing of each block to the value of the spacing slider. The activity of each block is denoted by the index of each block in a list relative to the value on it's relative slider. If the index is greater than the value of the slider it will be set to true, otherwise it will be set to false. THe rotation of the towers is determined by 3 button clicks and they rotate around their parent's starting position. These three buttons rotate the towers right around the parents position, left around it, and stop the rotation all together.
+The individual Rotation of each block, the spacing between each block, the activity of each block and the rotation of all the towers of once are all controlled by buttons. Each block individual rotates around a random axis basde on a toggle in the HUD, when the toggle is set to false it's rotation is reset to it's original rotation. The spacing is denoted by assigning the spacing of each block to the value of the spacing slider. The activity of each block is denoted by the index of each block in a list relative to the value on it's relative slider. If the index is greater than the value of the slider it will be set to false, otherwise it will be set to true. THe rotation of the towers is determined by 3 button clicks and they rotate around their parent's starting position. These three buttons rotate the towers right around the parents position, left around it, and stop the rotation all together.
 
 Here is how the spacing between each block works, it's function is called in Update:
 
