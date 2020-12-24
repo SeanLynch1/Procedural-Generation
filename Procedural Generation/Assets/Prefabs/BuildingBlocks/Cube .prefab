@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayDistance: 5
-  maxListLimit: 15
+  maxListLimit: 22
   buildingBlocks:
   - {fileID: 7225260961680768330, guid: 350a0b4d021d9524db1577a66c161330, type: 3}
   - {fileID: 3831035249263041299, guid: 2fdcdadadbe8cf546996eded92c5ab90, type: 3}
