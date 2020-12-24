@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1334811740888209667}
   - component: {fileID: 3846851973965508041}
   - component: {fileID: 2442386944957330718}
+  - component: {fileID: -7273027690460799948}
   m_Layer: 0
   m_Name: TowerTop
-  m_TagString: Untagged
+  m_TagString: PrimaryBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,3 +94,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9615706, y: 2, z: 1.9615707}
   m_Center: {x: 0.00000011920929, y: 0, z: -0.00000011920929}
+--- !u!114 &-7273027690460799948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3342303198883269660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75725431be3f8f94a90e9267119dd80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

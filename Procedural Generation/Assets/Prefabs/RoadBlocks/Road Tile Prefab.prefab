@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8908482857556263435}
   - component: {fileID: 7378259357125950573}
   - component: {fileID: 2244672560256198442}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Road Prefab
   m_TagString: Road Block
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 7216710303391454455}
   - component: {fileID: 4609355560889435527}
   - component: {fileID: 4720599966564609859}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3835759149933170085}
   - component: {fileID: 7658316317025057493}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Road Tile Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,10 +218,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roadPrefab: {fileID: 5196232332519942778}
-  cornerRoadPrefab: {fileID: 5196232332519942778, guid: 77d6d75512aa8df40a240d2e26edbdcd,
-    type: 3}
-  emptyPrefab: {fileID: 7586782364665834993, guid: bdca17e636c6aac439a8324eae531783,
-    type: 3}
   towerPrefab: {fileID: 6027554913916897077, guid: 6b9a6f345722a20489cae385ad0ec255,
     type: 3}
-  randomDirection: {x: 0, y: 0, z: 0}

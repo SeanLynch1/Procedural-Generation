@@ -48,11 +48,6 @@ public class AddedBlockPath : MonoBehaviour
         AddBlock();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     GameObject addedBlock;
 
     public void AddBlock()

@@ -20,6 +20,9 @@ public class BuildingGenerator : MonoBehaviour
     public List<GameObject> buildingBlockPrefabs;
     [HideInInspector] public List<GameObject> instantiatedBlocks = new List<GameObject>();
     #endregion
+ 
+
+   
     void Start()
     {
         tileGenerator = GameObject.Find("Tile Generator");
@@ -27,10 +30,12 @@ public class BuildingGenerator : MonoBehaviour
         AssignBuildingHeights();
         BuildTower();
         TowerTop();
+
+     
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         ModifyTower();
     }
@@ -83,4 +88,6 @@ public class BuildingGenerator : MonoBehaviour
             }
         }
     }
+
 }
+

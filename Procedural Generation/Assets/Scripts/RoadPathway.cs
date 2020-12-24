@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class RoadPathway : MonoBehaviour
 {
-    InstantiateRoads instantiateRoads;
-    InstantiateTowers instantiateTowers;
+    [Header ("Components")]
     public GameObject roadPrefab;
     public GameObject towerPrefab;
-    private float rayDistance = 5;
+    LayerMask roadMask;
 
+    InstantiateRoads instantiateRoads;
+    InstantiateTowers instantiateTowers;
+    
+    private float rayDistance = 5;
     // Start is called before the first frame update
     void Start()
     {
         instantiateRoads = FindObjectOfType<InstantiateRoads>();
         instantiateTowers = FindObjectOfType<InstantiateTowers>();
-        if(instantiateRoads.roadTiles.Count < instantiateRoads.maxRoads)
+        roadMask = LayerMask.GetMask("Road");
+        if (instantiateRoads.roadTiles.Count < instantiateRoads.maxRoads)
         {
             ShootRays();
         }
-
     }
     private void FixedUpdate()
     {
@@ -27,21 +30,21 @@ public class RoadPathway : MonoBehaviour
         Debug.DrawRay(this.gameObject.transform.position, transform.forward * rayDistance, Color.yellow);
 
         RaycastHit hit;
-        if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(1, 0, 1)), out hit, rayDistance))
+        if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(1, 0, 1)), out hit, rayDistance, roadMask))
         {
-            if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(1, 0, -1)), out hit, rayDistance))
+            if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(1, 0, -1)), out hit, rayDistance, roadMask))
             {
-                if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(-1, 0, 1)), out hit, rayDistance))
+                if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(-1, 0, 1)), out hit, rayDistance, roadMask))
                 {
-                    if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(-1, 0, -1)), out hit, rayDistance))
+                    if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(-1, 0, -1)), out hit, rayDistance, roadMask))
                     {
-                        if (Physics.Raycast(this.transform.position, transform.TransformDirection(Vector3.right), out hit, rayDistance))
+                        if (Physics.Raycast(this.transform.position, transform.TransformDirection(Vector3.right), out hit, rayDistance,roadMask))
                         {
-                            if (Physics.Raycast(this.transform.position, transform.TransformDirection(-Vector3.right), out hit, rayDistance))
+                            if (Physics.Raycast(this.transform.position, transform.TransformDirection(-Vector3.right), out hit, rayDistance, roadMask))
                             {
-                                if (Physics.Raycast(this.transform.position, transform.TransformDirection(-Vector3.forward), out hit, rayDistance))
+                                if (Physics.Raycast(this.transform.position, transform.TransformDirection(-Vector3.forward), out hit, rayDistance, roadMask))
                                 {
-                                    if (Physics.Raycast(this.transform.position, transform.TransformDirection(Vector3.forward), out hit, rayDistance))
+                                    if (Physics.Raycast(this.transform.position, transform.TransformDirection(Vector3.forward), out hit, rayDistance, roadMask))
                                     {
                                         this.gameObject.SetActive(false);
                                     }
@@ -105,19 +108,19 @@ public class RoadPathway : MonoBehaviour
     private bool CheckSides(int n)
     {
         RaycastHit hit;
-        if (!Physics.Raycast(this.transform.position, transform.forward * rayDistance, out hit, rayDistance))
+        if (!Physics.Raycast(this.transform.position, transform.forward * rayDistance, out hit, rayDistance, roadMask))
         {
             n += 1;
         }
-        if (!Physics.Raycast(this.transform.position, -transform.forward * rayDistance, out hit, rayDistance))
+        if (!Physics.Raycast(this.transform.position, -transform.forward * rayDistance, out hit, rayDistance, roadMask))
         {
             n += 1;
         }
-        if (!Physics.Raycast(this.transform.position, transform.right * rayDistance, out hit, rayDistance))
+        if (!Physics.Raycast(this.transform.position, transform.right * rayDistance, out hit, rayDistance, roadMask))
         {
             n += 1;
         }
-        if (!Physics.Raycast(this.transform.position, -transform.right * rayDistance, out hit, rayDistance))
+        if (!Physics.Raycast(this.transform.position, -transform.right * rayDistance, out hit, rayDistance, roadMask))
         {
             n += 1;
         }
