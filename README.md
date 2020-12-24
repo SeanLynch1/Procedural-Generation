@@ -49,8 +49,8 @@ Multiple tiles can be formed in multiple loops in the shape of a circle using th
 
 The information for the for loop was referenced from some of the code created on the Game Engines course and modified by me.
 This is how the the towers are created in a for loop:
-<!-- 
-  for (int i = 0; i < num; i++)
+
+    for (int i = 0; i < num; i++)
         {
             radius += Random.Range(20, maxSpaceBetweenLayer);
             num2 += 1;
@@ -76,11 +76,11 @@ This is how the the towers are created in a for loop:
                 tile.transform.parent = this.gameObject.transform;
                 tileList.Add(tile);
             }
-        }-->
+        }
 
 This is how the recursion layers of the towers are generated:
 
-<!--    public void BuildTower()
+    public void BuildTower()
     {
         float increasableValue = 0;
         for (int i = 0; i < buildingHeight; i++)
@@ -96,7 +96,7 @@ This is how the recursion layers of the towers are generated:
                 instantiatedBlocks.Add(buildingBlock);
             }
         }
-    } -->
+    }
  
  The cube blocks in each tower shoots out a ray in a random direction, selecting from a range of forward, back, left, and, right. If the ray does not collide with a primary tower block it will instantiate a new random block to the side of it at the end point of the casted ray. This newly instantiated block will repeat this process several times forming an overhanging structure to the side of the tower.
  
@@ -104,8 +104,8 @@ This is how the recursion layers of the towers are generated:
  
  This is how the road system works:
  
-  <!--
-   public void ShootRays()
+ 
+    public void ShootRays()
     {
         RaycastHit hit;
         int randomNumber = Random.Range(0, 10);
@@ -140,14 +140,14 @@ This is how the recursion layers of the towers are generated:
             this.transform.eulerAngles = new Vector3(this.transform.rotation.x, this.transform.rotation.y + degrees, this.transform.rotation.z);
         }
     } 
-     -->
+    
     
     
 The individual Rotation of each block, the spacing between each block, the activity of each block and the rotation of all the towers of once are all controlled by buttons. Each block individual rotates around a random axis basde on a toggle in the HUD, when the toggle is set to false it's rotation is reset to it's original rotation. The spacing is denoted by assigning the spacing of each block to the value of the spacing slider. The activity of each block is denoted by the index of each block in a list relative to the value on it's relative slider. If the index is greater than the value of the slider it will be set to true, otherwise it will be set to false. THe rotation of the towers is determined by 3 button clicks and they rotate around their parent's starting position. These three buttons rotate the towers right around the parents position, left around it, and stop the rotation all together.
 
 Here is how the spacing between each block works, it's function is called in Update:
-<!--
- public void ModifyTower()
+
+    public void ModifyTower()
     {
         float increasableValue = 0;
         foreach (GameObject g in instantiatedBlocks)
@@ -164,10 +164,10 @@ Here is how the spacing between each block works, it's function is called in Upd
             }
         }
     }
-    -->
+   
     
 Here is how the activity of each block in their correlated list is set, this function is also called in Update:
-<!--
+
     public void BlockActivity()
     {
         if (instantiateTowers != null)
@@ -192,7 +192,6 @@ Here is how the activity of each block in their correlated list is set, this fun
             }
     }
 
--->
 # Initial Proposal
 This repository will contain the source files and code on my journey of trying to create a 3D procedurally generated city.
 
