@@ -70,6 +70,7 @@ public class AddedBlockPath : MonoBehaviour
             fractalGeneration = gameObject.GetComponentInParent<FractalGeneration>();
             if (collision.gameObject.tag == "PrimaryBlock" && this.gameObject != fractalGeneration.trackOfBlocks[0].gameObject)
                 this.gameObject.SetActive(false);
+         
         }
     }
 
