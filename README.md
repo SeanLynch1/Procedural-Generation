@@ -37,3 +37,6 @@ https://www.youtube.com/watch?v=sUDPfC1nH_E&t=176s
 
 https://www.youtube.com/watch?v=64NblGkAabk
 
+SHIP CONTROLLER:
+
+https://www.youtube.com/watch?v=yu3RhF7fHd8
