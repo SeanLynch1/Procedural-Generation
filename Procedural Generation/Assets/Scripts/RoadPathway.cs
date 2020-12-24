@@ -5,9 +5,8 @@ using UnityEngine;
 public class RoadPathway : MonoBehaviour
 {
     InstantiateRoads instantiateRoads;
+    InstantiateTowers instantiateTowers;
     public GameObject roadPrefab;
-    public GameObject cornerRoadPrefab;
-    public GameObject emptyPrefab;
     public GameObject towerPrefab;
     private float rayDistance = 5;
 
@@ -15,6 +14,7 @@ public class RoadPathway : MonoBehaviour
     void Start()
     {
         instantiateRoads = FindObjectOfType<InstantiateRoads>();
+        instantiateTowers = FindObjectOfType<InstantiateTowers>();
         if(instantiateRoads.roadTiles.Count < instantiateRoads.maxRoads)
         {
             ShootRays();
@@ -61,7 +61,9 @@ public class RoadPathway : MonoBehaviour
         {
             Debug.Log("number = " + number);
             this.gameObject.SetActive(false);
-            Instantiate(towerPrefab, this.transform.position, Quaternion.identity);
+            GameObject tile = Instantiate(towerPrefab, this.transform.position, Quaternion.identity);
+            tile.gameObject.transform.parent = instantiateTowers.gameObject.transform;
+            instantiateTowers.tileList.Add(tile);
         }
     }
 
@@ -97,7 +99,7 @@ public class RoadPathway : MonoBehaviour
                 spaceAvailabilityDetector.transform.parent = this.gameObject.transform.parent;
                 instantiateRoads.roadTiles.Add(spaceAvailabilityDetector);
             }
-            this.transform.rotation = Quaternion.Euler(this.transform.rotation.x, this.transform.rotation.y + degrees, this.transform.rotation.z);
+            this.transform.eulerAngles = new Vector3(this.transform.rotation.x, this.transform.rotation.y + degrees, this.transform.rotation.z);
         }
     }
     private bool CheckSides(int n)

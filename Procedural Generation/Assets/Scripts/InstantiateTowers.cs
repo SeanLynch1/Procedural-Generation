@@ -21,7 +21,7 @@ public class InstantiateTowers : MonoBehaviour
     {
         for (int i = 0; i < num; i++)
         {
-            radius += Random.Range(15, maxSpaceBetweenLayer);
+            radius += Random.Range(20, maxSpaceBetweenLayer);
             num2 += 1;
             for (int j = 0; j < num2; j++)
             {
@@ -42,6 +42,7 @@ public class InstantiateTowers : MonoBehaviour
 
                 /* Now spawn */
                 var tile = Instantiate(tilePrefab, spawnPos, tilePrefab.transform.rotation) as GameObject;
+                tile.transform.parent = this.gameObject.transform;
                 tileList.Add(tile);
             }
         }
