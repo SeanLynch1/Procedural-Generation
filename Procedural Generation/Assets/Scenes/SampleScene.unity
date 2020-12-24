@@ -2910,7 +2910,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394033224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07247734, y: 27.46, z: -292.22498}
+  m_LocalPosition: {x: -0.07247734, y: 27.46, z: -204.22498}
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3733,9 +3733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009ae0fd2f1d7a94cab994e5ab8f4cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingLoops: 1
+  buildingLoops: 2
   radius: 30
-  maxSpaceBetweenLayer: 80
+  maxSpaceBetweenLayer: 50
   tilePrefab: {fileID: 6027554913916897077, guid: 2dd4042c41082ec45896ad26330f1e81,
     type: 3}
   tileList: []
@@ -4295,7 +4295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147770682065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 32.76, z: -296}
+  m_LocalPosition: {x: 0, y: 32.76, z: -208}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
