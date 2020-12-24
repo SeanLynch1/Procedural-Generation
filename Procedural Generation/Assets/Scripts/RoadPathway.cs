@@ -26,47 +26,19 @@ public class RoadPathway : MonoBehaviour
     }
     private void FixedUpdate()
     {
-       
-        Debug.DrawRay(this.gameObject.transform.position, transform.forward * rayDistance, Color.yellow);
-
-        RaycastHit hit;
-        if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(1, 0, 1)), out hit, rayDistance, roadMask))
-        {
-            if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(1, 0, -1)), out hit, rayDistance, roadMask))
-            {
-                if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(-1, 0, 1)), out hit, rayDistance, roadMask))
-                {
-                    if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(-1, 0, -1)), out hit, rayDistance, roadMask))
-                    {
-                        if (Physics.Raycast(this.transform.position, transform.TransformDirection(Vector3.right), out hit, rayDistance,roadMask))
-                        {
-                            if (Physics.Raycast(this.transform.position, transform.TransformDirection(-Vector3.right), out hit, rayDistance, roadMask))
-                            {
-                                if (Physics.Raycast(this.transform.position, transform.TransformDirection(-Vector3.forward), out hit, rayDistance, roadMask))
-                                {
-                                    if (Physics.Raycast(this.transform.position, transform.TransformDirection(Vector3.forward), out hit, rayDistance, roadMask))
-                                    {
-                                        this.gameObject.SetActive(false);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        else
-        {
-            this.gameObject.SetActive(true);
-        }
+        CheckEachSide();
+     
         int number = 0;
         if(CheckSides(number) && !InstantiateTowers.isRotating)
         {
             Debug.Log("number = " + number);
             this.gameObject.SetActive(false);
             GameObject tile = Instantiate(towerPrefab, this.transform.position, Quaternion.identity);
-            tile.gameObject.transform.parent = instantiateTowers.gameObject.transform;
-            instantiateTowers.tileList.Add(tile);
+            if (instantiateTowers != null)
+            {
+                tile.gameObject.transform.parent = instantiateTowers.gameObject.transform;
+                instantiateTowers.tileList.Add(tile);
+            }
         }
     }
 
@@ -128,6 +100,41 @@ public class RoadPathway : MonoBehaviour
             return true;
         else
             return false;
+    }
+    private void CheckEachSide()
+    {
+        Debug.DrawRay(this.gameObject.transform.position, transform.forward * rayDistance, Color.yellow);
+
+        RaycastHit hit;
+        if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(1, 0, 1)), out hit, rayDistance, roadMask))
+        {
+            if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(1, 0, -1)), out hit, rayDistance, roadMask))
+            {
+                if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(-1, 0, 1)), out hit, rayDistance, roadMask))
+                {
+                    if (Physics.Raycast(this.transform.position, transform.TransformDirection(new Vector3(-1, 0, -1)), out hit, rayDistance, roadMask))
+                    {
+                        if (Physics.Raycast(this.transform.position, transform.TransformDirection(Vector3.right), out hit, rayDistance, roadMask))
+                        {
+                            if (Physics.Raycast(this.transform.position, transform.TransformDirection(-Vector3.right), out hit, rayDistance, roadMask))
+                            {
+                                if (Physics.Raycast(this.transform.position, transform.TransformDirection(-Vector3.forward), out hit, rayDistance, roadMask))
+                                {
+                                    if (Physics.Raycast(this.transform.position, transform.TransformDirection(Vector3.forward), out hit, rayDistance, roadMask))
+                                    {
+                                        this.gameObject.SetActive(false);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            this.gameObject.SetActive(true);
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {

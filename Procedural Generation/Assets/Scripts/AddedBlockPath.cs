@@ -64,7 +64,7 @@ public class AddedBlockPath : MonoBehaviour
     }
     public void OnCollisionEnter(Collision collision)
     {
-        if(!ToggleControl.rotateIndividually)
+        if(!ToggleControl.rotateIndividually && !ButtonControl.rotateLeft &&!ButtonControl.rotateRight)
         {
             fractalGeneration = gameObject.GetComponentInParent<FractalGeneration>();
             if (collision.gameObject.tag == "PrimaryBlock" && this.gameObject != fractalGeneration.trackOfBlocks[0].gameObject)
