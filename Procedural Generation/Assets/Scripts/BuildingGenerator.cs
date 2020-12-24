@@ -24,8 +24,6 @@ public class BuildingGenerator : MonoBehaviour
 
     [Header("Component References")]
     private SliderControl sliderControl;
-    private Slider slider = null;
-
    
     void Start()
     {
