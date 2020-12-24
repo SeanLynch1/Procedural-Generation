@@ -77,10 +77,17 @@ This is how the the towers are created in a for loop:
             }
         }
 ```
+
+
+
+
 This is how the recursion layers of the towers are generated:
 
-`
-    public void BuildTower()
+
+
+
+
+    ```public void BuildTower()
     {
         float increasableValue = 0;
         for (int i = 0; i < buildingHeight; i++)
@@ -96,8 +103,8 @@ This is how the recursion layers of the towers are generated:
                 instantiatedBlocks.Add(buildingBlock);
             }
         }
-    }
-    `
+    } ```
+    
     The cube blocks in each tower shoots out a ray in a random direction, selecting from a range of forward, back, left, and, right. If the ray does not collide with a primary tower block it will instantiate a new random block to the side of it at the end point of the casted ray. This newly instantiated block will repeat this process several times forming an overhanging structure to the side of the tower.
 # Initial Proposal
 This repository will contain the source files and code on my journey of trying to create a 3D procedurally generated city.
