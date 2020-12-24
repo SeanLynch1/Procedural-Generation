@@ -56,6 +56,7 @@ public class AddedBlockPath : MonoBehaviour
         if (fractalGeneration.trackOfBlocks.Count <= fractalGeneration.maxListLimit)
         {
             addedBlock = Instantiate(fractalGeneration.buildingBlocks[Random.Range(0, fractalGeneration.buildingBlocks.Count)], this.transform.position + transform.TransformDirection(RandomDirection) * distance, Quaternion.identity);
+            this.gameObject.GetComponent<MeshRenderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f); // HSV = shade and intensity values
             addedBlock.transform.parent = this.gameObject.transform.parent;
             fractalGeneration.trackOfBlocks.Add(addedBlock);
         }
