@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d213db79eb15cd4b89b992a1a1a30f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBuildingHeight: 6
+  maxBuildingHeight: 5
   minBuildingHeight: 0
   blockSpacing: 5
   buildingBlockPrefabs:
