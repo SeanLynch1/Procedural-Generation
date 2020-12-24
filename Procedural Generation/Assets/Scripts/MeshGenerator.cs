@@ -26,19 +26,20 @@ public class MeshGenerator : MonoBehaviour
     }
     public void CreateShape()
     {
-        vertices = new Vector3[(xSize + 1) * (zSize + 1)];//Continas vertices in a grid
+        vertices = new Vector3[((xSize + 1) * (zSize + 1))];//Continas vertices in a grid
 
         //Assign a position of each vertice on our grid
 
-        for(int i = 0, z = 0; z <= zSize; z++)
-        {
-            for(int x = 0; x <=xSize; x ++)
+            for (int i = 0, z = 0; z <= zSize; z++)
             {
-                float y = Mathf.PerlinNoise(x * .3f, z * .3f) * 2f;
-                vertices[i] = new Vector3(x, y, z);
-                i++;
+                for (int x = 0; x <= xSize; x++)
+                {
+                    float y = Mathf.PerlinNoise(x * .3f, z * .3f) * 2f;
+                    vertices[i] = new Vector3(x, y, z);
+                    i++;
+                }
             }
-        }
+      
         triangles = new int[xSize * zSize * 6]; // amount of triangle points needed
 
 

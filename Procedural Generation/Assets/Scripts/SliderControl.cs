@@ -16,7 +16,7 @@ public class SliderControl : MonoBehaviour
     {
         instantiateTowers = FindObjectOfType<InstantiateTowers>();
         slider = gameObject.GetComponent<Slider>();
-
+        if (buildingGenerator != null)
         minSliderValue = buildingGenerator.blockSpacing;
         slider.minValue = minSliderValue;
     }
