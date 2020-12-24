@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildingGenerator : MonoBehaviour
 {
@@ -20,7 +21,10 @@ public class BuildingGenerator : MonoBehaviour
     public List<GameObject> buildingBlockPrefabs;
     [HideInInspector] public List<GameObject> instantiatedBlocks = new List<GameObject>();
     #endregion
- 
+
+    [Header("Component References")]
+    private SliderControl sliderControl;
+    private Slider slider = null;
 
    
     void Start()
@@ -30,8 +34,7 @@ public class BuildingGenerator : MonoBehaviour
         AssignBuildingHeights();
         BuildTower();
         TowerTop();
-
-     
+        sliderControl = FindObjectOfType<SliderControl>();
     }
 
     // Update is called once per frame
@@ -88,6 +91,5 @@ public class BuildingGenerator : MonoBehaviour
             }
         }
     }
-
 }
 

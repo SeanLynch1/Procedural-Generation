@@ -10,6 +10,7 @@ public class SliderControl : MonoBehaviour
     private FractalGeneration fractalGeneration;
     private Slider slider;
     public static int sideBlocks = 0;
+    public static bool changeScale;
     public float minSliderValue;
 
     void Start()
@@ -37,7 +38,7 @@ public class SliderControl : MonoBehaviour
                 fractalGeneration = g.GetComponentInChildren<FractalGeneration>();
                 if (fractalGeneration != null)
                 {
-                    slider.maxValue = (instantiateTowers.tileList.Count - fractalGeneration.trackOfBlocks.Count) / 3;
+                    slider.maxValue = (instantiateTowers.tileList.Count - fractalGeneration.trackOfBlocks.Count) / 3.5f;
                 }
                     float minSliderValue = 0;
                     slider.minValue = minSliderValue;
@@ -52,4 +53,5 @@ public class SliderControl : MonoBehaviour
                     }
             }
     }
+   
 }
